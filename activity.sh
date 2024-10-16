@@ -42,19 +42,22 @@ printf "]%s %-15.15s %s %-5s %-5s %-5s %-8s \n" \
        
        # D, P ok $HOSTNAME.... C, E, J, O, T, S  OK cat /proc....
 
-printf "|%s %s %s %s %s %s %s\n" \
+printf "|%s %s %s %s %s %s\n" \
 	"${C_ID:-N}" \
  	"$(command -v crontab >/dev/null 2>&1 && echo "cron"|| echo "<s>cron</s>")" \
-	"$(command -v w3m   >/dev/null 2>&1 && echo "w3m"  || echo "<s>w3m</s>")" \
-	"$(command -v lynx  >/dev/null 2>&1 && echo "lynx" || echo "<s>lynx</s>")" \
-	"$(command -v links >/dev/null 2>&1 && echo "links"|| echo "<s>links</s>")" \
-	"$(command -v curl  >/dev/null 2>&1 && echo "curl" || echo "<s>curl</s>")" \
-	"$(command -v newsboat >/dev/null 2>&1 && echo "newsboat"|| echo "<s>newsboat</s>")" 
+	"$(command -v w3m     >/dev/null 2>&1 && echo "w3m"   || echo "<s>w3m</s>")" \
+	"$(command -v lynx    >/dev/null 2>&1 && echo "lynx"  || echo "<s>lynx</s>")" \
+	"$(command -v links   >/dev/null 2>&1 && echo "links" || echo "<s>links</s>")" \
+	"$(command -v curl    >/dev/null 2>&1 && echo "curl"  || echo "<s>curl</s>")" 
  
-	#"$(command -v finger >/dev/null 2>&1 && echo "finger"|| echo "<s>finger</s>")" 
-	#"$(command -v weechat >/dev/null 2>&1 && echo "weechat"|| echo "<s>weechat</s>")" \
-	#"$(command -v irssi >/dev/null 2>&1 && echo "irssi"       || echo "<s>irssi</s>")" \
+	#"$(command -v finger >/dev/null 2>&1 && echo "finger"|| echo "<s>finger</s>")"
+	#"$(command -v irssi  >/dev/null 2>&1 && echo "irssi" || echo "<s>irssi</s>")"
 
+printf "|%s %s %s\n" \
+        "${C_ID:-N}" \
+	"$(command -v newsboat >/dev/null 2>&1 && echo "newsboat"|| echo "<s>newsboat</s>")" \
+ 	"$(command -v weechat  >/dev/null 2>&1 && echo "weechat" || echo "<s>weechat</s>")" 
+ 
 printf "[%s %s\n" \
 	   "${C_ID:-N}" \
 	   "$(grep "^$(whoami):" /etc/passwd | \
