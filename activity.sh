@@ -98,7 +98,7 @@ printf "   %-8s %-8s %-3s %-3s %-3s %-3s\n" \
 		printf "</pre>\n\n<p style='color:red;'>%s</p>" "$last_access"
     fi 
     
-printf "\n<pre>%s</pre> \n" "$(crontab -l) >/dev/null 2>&1"
+printf "\n<pre class="sml">%s</pre> \n" "$(crontab -l) >/dev/null 2>&1"
 
 } > "$o"
 
