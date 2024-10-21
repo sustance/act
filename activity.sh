@@ -38,7 +38,7 @@ printf "]%s %-15.15s %s %-5s %-5s %-5s %-8s \n" \
        "$(tilde -V 2>/dev/null | grep "Tilde v" | sed 's/Tilde version //' || echo "<s>tilde</s>")" \
        "$(lua -v 2>/dev/null | awk 'NR==1 {print $2}' | cut -d. -f1,2 || echo "<s>lua</s>")" \
        "$(php --version 2>/dev/null | awk 'NR==1 {print $2}' | cut -d. -f1,2 || echo "<s>php</s>")" \
-       "$(basename "$SHELL") $(0)"
+       "$(basename "$SHELL")"
        
        # D, P ok $HOSTNAME.... C, E, J, O, T, S  OK cat /proc....
 
