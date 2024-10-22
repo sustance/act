@@ -99,6 +99,8 @@ last_access=$(last -t "$four_days_ago" "$current_user" 2>/dev/null |
 
 printf "\n<pre><span class='sml'>%s</span></pre> \n" "$(crontab -l | grep "* *") >/dev/null 2>&1"
 
+printf "path to write %s" "$o "
+
 } > "$o"
 
 cat "$o"
