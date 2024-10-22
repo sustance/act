@@ -96,7 +96,7 @@ last_access=$(last -t "$four_days_ago" "$current_user" 2>/dev/null |
     sed 's/00:0[0-9]//g; s/00//g; s/ 0/ /g')  # Remove leading zeros
 	printf "</pre>\n<p style='color:red;'>%s</p>" "$last_access"fi 
 fi    
-printf "\n<pre><span class='sml'>%s</span></pre> \n" "$(crontab -l) >/dev/null 2>&1"
+printf "\n<pre><span class='sml'>%s</span></pre> \n" "$(crontab -l | grep "* *") >/dev/null 2>&1"
 
 } > "$o"
 
