@@ -4,7 +4,8 @@ if [ -d /home/i/identity ]; then
     o="/home/i/identity/public_html/a.txt"
 
 else
-    o="/home/${USER:-$(whoami)}/public_html/a.txt"
+    #o="/home/${USER:-$(whoami)}
+    o="~/public_html/a.txt"
 fi
 
 # Append ping to file only if it's a number
