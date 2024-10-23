@@ -102,9 +102,10 @@ printf "\n<pre><span class='sml'>%s</span></pre> \n" "$(crontab -l | grep "* *")
 
 printf "path to write %s" "$o "
 
-} > "$o"
+} > ~/public_html/a.txt
 
-cat "$o"
+cat ~/public_html/a.txt
+#cat "$o"
 
 
 #ps -p $$ – Display your current shell name reliably.
