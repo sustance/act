@@ -61,8 +61,8 @@ printf "   %-8s %-8s %-3s %-3s %-3s %-3s\n" \
        		| awk -F'/' 'END {printf "%.0f\n", $5}' || echo "NA")" \
         "$(ping -c 1 -w 1 123.255.88.1 >/dev/null 2>&1 && ping -c 3 123.255.88.1 2>/dev/null \
         	| awk -F'/' 'END {printf "%.0f\n", $5}' || echo "NA")" \
-       "$overall_avg" \
-       "$total_count"
+       "$overall_avg" 
+       #"$total_count"
        #123.255.91.198 an alternate 203.104.103.86 Japan Net Info Ctr (JPNIC)
     	
 if [ -d /home/i/identity ]; then
@@ -81,7 +81,7 @@ else
 	printf "</pre>\n<p style='color:red;'>%s</p>" "$last_access"
 fi
 
-printf "\n<pre><span class='sml'>%s</span></pre> \n" "$(crontab -l | grep "* *") >/dev/null 2>&1"
+printf "\n<pre><span class='sml'>%s</span></pre> \n" "$(crontab -l | grep '* *') >/dev/null 2>&1"
 
 } > ~/public_html/a.txt
 
