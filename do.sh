@@ -1,19 +1,4 @@
 #!/bin/sh
-
-if [ -d /home/i/identity ]; then
-    o="/home/i/identity/public_html/a.txt"
-
-else
-    #o="/home/${USER:-$(whoami)}
-    o="~/public_html/a.txt"
-fi
-
-# Append ping to file only if it's a number
-#case $pingn in
-#    ''|*[!0-9.]*) ;;  # not a number, do nothing
-#    *) echo "$pingn" >> "${HOME}/.local/ping.txt" ;;
-#esac
-
 # Calculate ping averages Use awk 
 overall_avg=$(awk '
     BEGIN { sum = 0; count = 0 }
@@ -40,8 +25,7 @@ printf "]%s %-15.15s %s %-5s %-5s %-5s %-8s \n" \
        "$(tilde -V 2>/dev/null | grep "Tilde v" | sed 's/Tilde version //' || echo "<s>tilde</s>")" \
        "$(lua -v 2>/dev/null | awk 'NR==1 {print $2}' | cut -d. -f1,2 || echo "<s>lua</s>")" \
        "$(php --version 2>/dev/null | awk 'NR==1 {print $2}' | cut -d. -f1,2 || echo "<s>php</s>")" \
-       "$(basename "$SHELL")"
-       
+       "$(basename "$SHELL")" 
        # D, P ok $HOSTNAME.... C, E, J, O, T, S  OK cat /proc....
 
 printf "|%s %s %s %s %s %s\n" \
@@ -86,25 +70,23 @@ if [ -d /home/i/identity ]; then
 elif [ -d /home/aaa/store ]; then
     printf "<span style='color:red;'>access list off for aaa</span>\n"
 else
-# Get the date 4 days ago in YYYY-MM-DD format Try Linux, then fall back to current date
-four_days_ago=$(date -d '-4 days' +%Y-%m-%d 2>/dev/null || date +%Y-%m-%d)
-current_user=${USER:-$(whoami)}
-# Fetch login times for the current user in the last 4 days
-last_access=$(last -t "$four_days_ago" "$current_user" 2>/dev/null |
-    awk -F'[()]' '{print $2}' |  # Extract timestamps
-    tr '\n' ' ' |                # Join lines
-    sed 's/00:0[0-9]//g; s/00//g; s/ 0/ /g')  # Remove leading zeros
+	# Get the date 4 days ago in YYYY-MM-DD format Try Linux, then fall back to current date
+	four_days_ago=$(date -d '-4 days' +%Y-%m-%d 2>/dev/null || date +%Y-%m-%d)
+	current_user=${USER:-$(whoami)}
+	# Fetch login times for the current user in the last 4 days
+	last_access=$(last -t "$four_days_ago" "$current_user" 2>/dev/null |
+    	awk -F'[()]' '{print $2}' |  # Extract timestamps
+    	tr '\n' ' ' |                # Join lines
+    	sed 's/00:0[0-9]//g; s/00//g; s/ 0/ /g')  # Remove leading zeros
 	printf "</pre>\n<p style='color:red;'>%s</p>" "$last_access"
 fi
 
 printf "\n<pre><span class='sml'>%s</span></pre> \n" "$(crontab -l | grep "* *") >/dev/null 2>&1"
 
-printf "path to write %s" "$o "
-
 } > ~/public_html/a.txt
 
 cat ~/public_html/a.txt
-#cat "$o"
+
 
 
 #ps -p $$ – Display your current shell name reliably.
