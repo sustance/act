@@ -86,17 +86,16 @@ if [ -d /home/i/identity ]; then
 elif [ -d /home/aaa/store ]; then
     printf "<span style='color:red;'>access list off for aaa</span>\n"
 else
-# Get the date 4 days ago in YYYY-MM-DD format
-# Try Linux, then fall back to current date
+# Get the date 4 days ago in YYYY-MM-DD format Try Linux, then fall back to current date
 four_days_ago=$(date -d '-4 days' +%Y-%m-%d 2>/dev/null || date +%Y-%m-%d)
-# Get the current user
 current_user=${USER:-$(whoami)}
 # Fetch login times for the current user in the last 4 days
 last_access=$(last -t "$four_days_ago" "$current_user" 2>/dev/null |
     awk -F'[()]' '{print $2}' |  # Extract timestamps
     tr '\n' ' ' |                # Join lines
     sed 's/00:0[0-9]//g; s/00//g; s/ 0/ /g')  # Remove leading zeros
-	printf "</pre>\n<p style='color:red;'>%s</p>" "$last_access"fi 
+	printf "</pre>\n<p style='color:red;'>%s</p>" "$last_access"
+fi
 
 printf "\n<pre><span class='sml'>%s</span></pre> \n" "$(crontab -l | grep "* *") >/dev/null 2>&1"
 
