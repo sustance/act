@@ -81,7 +81,7 @@ else
 	printf "</pre>\n<p style='color:red;'>%s</p>" "$last_access"
 fi
 
-printf "\n<p><span class='sml'>%s</span></pre> \n" "$(crontab -l | grep '* *'|sed 's/null/<br>/')"
+printf "\n<p><span class='sml'>%s</span></pre> \n" "$(crontab -l | grep '* *'|sed 's/2>&1/<br>/')"
 
 } > ~/public_html/a.txt
 
