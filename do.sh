@@ -34,8 +34,7 @@ printf "|%s %s %s %s %s %s\n" \
 	"$(command -v w3m     >/dev/null 2>&1 && echo "w3m"   || echo "<s>w3m</s>")" \
 	"$(command -v lynx    >/dev/null 2>&1 && echo "lynx"  || echo "<s>lynx</s>")" \
 	"$(command -v links   >/dev/null 2>&1 && echo "links" || echo "<s>links</s>")" \
-	"$(command -v curl    >/dev/null 2>&1 && echo "curl"  || echo "<s>curl</s>")" 
- 
+	"$(command -v curl    >/dev/null 2>&1 && echo "curl"  || echo "<s>curl</s>")"  
 	#"$(command -v finger >/dev/null 2>&1 && echo "finger"|| echo "<s>finger</s>")"
 	#"$(command -v irssi  >/dev/null 2>&1 && echo "irssi" || echo "<s>irssi</s>")"
 
@@ -78,14 +77,12 @@ else
     	awk -F'[()]' '{print $2}' |  # Extract timestamps
     	tr '\n' ' ' |                # Join lines
     	sed 's/00:0[0-9]//g; s/00//g; s/ 0/ /g')  # Remove leading zeros
-	printf "</pre>\n<p style='color:red;'>%s</p>" "$last_access"
+	printf "</pre>\n<p style='color:red;'>%s\n</p>" "$last_access"
 fi
-printf "\n<p class='sml'>%s</p>\n</div>\n\n" "$(crontab -l | grep '* *'|sed 's/2>&1/<br>/')"
+printf "\n<p class='sml'>%s\n</p>\n</div>\n\n" "$(crontab -l | grep '* *'|sed 's/2>&1/<br>/')"
 } > ~/public_html/a.txt
 
 cat ~/public_html/a.txt
-
-
 
 #ps -p $$ – Display your current shell name reliably.
 #echo "$SHELL" – Print the shell for the current user but not necessarily the shell that is running at the movement.
@@ -93,4 +90,3 @@ cat ~/public_html/a.txt
 #readlink /proc/$$/exe – Another option to get the current shell name reliably on Linux operating systems.
 #cat /etc/shells – List pathnames of valid login shells currently installed
 #NO RESULT grep "^$USER" /etc/passwd – Print the default shell name. The default shell runs when you open a terminal window.
-
