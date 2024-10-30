@@ -16,17 +16,17 @@ overall_avg=$(awk '
 {
 printf "\n<pre>"
 printf "   <u>%-15.15s %-3s %-5s %-5s %-5s %-4s</u> \n" \
-	   "Hostname" "OS" "Tilde" "Lua" "Php" "r-Sh"
+	"Hostname" "OS" "Tilde" "Lua" "Php" "r-Sh"
            
 printf "]%s %-15.15s %s %-5s %-5s %-5s %-8s \n" \
-       "${C_ID:-N}" \
-       "${HOSTNAME} $(cat /proc/sys/kernel/hostname)" \
-       "$(uname | cut -c -3 )" \
-       "$(tilde -V 2>/dev/null | grep "Tilde v" | sed 's/Tilde version //' || echo "<s>tilde</s>")" \
-       "$(lua -v 2>/dev/null | awk 'NR==1 {print $2}' | cut -d. -f1,2 || echo "<s>lua</s>")" \
-       "$(php --version 2>/dev/null | awk 'NR==1 {print $2}' | cut -d. -f1,2 || echo "<s>php</s>")" \
-       "$(basename "$SHELL")" 
-       # D, P ok $HOSTNAME.... C, E, J, O, T, S  OK cat /proc....
+    "${C_ID:-N}" \
+    "${HOSTNAME} $(cat /proc/sys/kernel/hostname)" \
+    "$(uname | cut -c -3 )" \
+    "$(tilde -V 2>/dev/null | grep "Tilde v" | sed 's/Tilde version //' || echo "<s>tilde</s>")" \
+    "$(lua -v 2>/dev/null | awk 'NR==1 {print $2}' | cut -d. -f1,2 || echo "<s>lua</s>")" \
+    "$(php --version 2>/dev/null | awk 'NR==1 {print $2}' | cut -d. -f1,2 || echo "<s>php</s>")" \
+    "$(basename "$SHELL")" 
+    # D, P ok $HOSTNAME.... C, E, J, O, T, S  OK cat /proc....
 
 printf "|%s %s %s %s %s %s\n" \
 	"${C_ID:-N}" \
@@ -46,23 +46,23 @@ printf "|%s %s %s %s %s\n" \
  	"$(command -v weechat >/dev/null 2>&1 && echo "weechat"|| echo "<s>weechat</s>")" 
  
 printf "[%s %s\n" \
-	   "${C_ID:-N}" \
-	   "$(grep "^$(whoami):" /etc/passwd | \
-	   sed 's/identit//g; s/id2/d2/g; s/aaa/aa/g; s/in//; s/sr//; s/ome//; s/nfo//; s/kg//; s/ocal//; s/,,,//; s/User \&// ; s/:100:/: 100:/')" 
+	"${C_ID:-N}" \
+	"$(grep "^$(whoami):" /etc/passwd | \
+	sed 's/identit//g; s/id2/d2/g; s/aaa/aa/g; s/in//; s/sr//; s/ome//; s/nfo//; s/kg//; s/ocal//; s/,,,//; s/User \&// ; s/:100:/: 100:/')" 
 
 printf "   <u>%-8s %-8s|%-3s %-3s %-3s %-3s</u>\n" \
-       "@H.K." "@Site" "dns" "h.k" "ave" "Ping"	
+    "@H.K." "@Site" "dns" "h.k" "ave" "Ping"	
 
 printf "   %-8s %-8s %-3s %-3s %-3s %-3s\n" \
-       "$(TZ=UTC-8 date +'%H:%M/%d' 2>/dev/null || date +'%H:%M/%d')" \
-       "$(date +'%H:%M/%d')" \
-       "$(ping -c 1 -w 1 8.8.8.8 >/dev/null 2>&1 && ping -c 3 8.8.8.8 2>/dev/null \
-       		| awk -F'/' 'END {printf "%.0f\n", $5}' || echo "NA")" \
-        "$(ping -c 1 -w 1 123.255.88.1 >/dev/null 2>&1 && ping -c 3 123.255.88.1 2>/dev/null \
-        	| awk -F'/' 'END {printf "%.0f\n", $5}' || echo "NA")" \
-       "$overall_avg" 
-       #"$total_count"
-       #123.255.91.198 an alternate 203.104.103.86 Japan Net Info Ctr (JPNIC)
+    "$(TZ=UTC-8 date +'%H:%M/%d' 2>/dev/null || date +'%H:%M/%d')" \
+    "$(date +'%H:%M/%d')" \
+    "$(ping -c 1 -w 1 8.8.8.8 >/dev/null 2>&1 && ping -c 3 8.8.8.8 2>/dev/null \
+       	| awk -F'/' 'END {printf "%.0f\n", $5}' || echo "NA")" \
+    "$(ping -c 1 -w 1 123.255.88.1 >/dev/null 2>&1 && ping -c 3 123.255.88.1 2>/dev/null \
+        | awk -F'/' 'END {printf "%.0f\n", $5}' || echo "NA")" \
+    "$overall_avg" 
+    #"$total_count"
+    #123.255.91.198 an alternate 203.104.103.86 Japan Net Info Ctr (JPNIC)
     	
 if [ -d /home/i/identity ]; then
 	printf "<span style='color:red;'>no last access info</span>\n"
