@@ -79,7 +79,7 @@ else
     	sed 's/00:0[0-9]//g; s/00//g; s/ 0/ /g')  # Remove leading zeros
 	printf "</pre>\n<p style='color:red;'>%s\n</p>" "$last_access"
 fi
-printf "\n<p class='sml'>%s\n</p>\n</div>\n\n" "$(crontab -l | grep '* *'|sed 's/2>&1/<br>/')"
+printf "\n<p class='sml'>%s\n</p>\n</div>\n\n\n\n" "$(crontab -l | grep '* *'|sed 's/2>&1/<br>/')"
 } > ~/public_html/a.txt
 
 cat ~/public_html/a.txt
