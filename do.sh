@@ -1,4 +1,20 @@
 #!/bin/sh
+
+
+PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
+export PATH
+
+# Log file
+LOGFILE=~/logfile.log
+
+# Commands
+echo "Running script at $(date)" >> $LOGFILE
+echo "Running as user: $(whoami)" >> $LOGFILE
+grep --version >> $LOGFILE 2>&1
+date >> $LOGFILE 2>&1
+ping -c 1 google\.com >> $LOGFILE 2>&1
+
+
 # Calculate ping averages Use awk 
 overall_avg=$(awk '
     BEGIN { sum = 0; count = 0 }
@@ -37,6 +53,7 @@ printf "|%s %s %s %s %s %s\n" \
 	"$(command -v curl    >/dev/null 2>&1 && echo "curl"  || echo "<s>curl</s>")"  
 	#"$(command -v finger >/dev/null 2>&1 && echo "finger"|| echo "<s>finger</s>")"
 	#"$(command -v irssi  >/dev/null 2>&1 && echo "irssi" || echo "<s>irssi</s>")"
+
 
 printf "|%s %s %s %s %s\n" \
         "${C_ID:-N}" \
