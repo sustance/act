@@ -93,9 +93,9 @@ printf "   %-8s %-8s %-3s %-3s %-3s %-3s\n" \
     #123.255.91.198 an alternate 203.104.103.86 Japan Net Info Ctr (JPNIC)
     	
 if [ -d /home/i/identity ]; then
-	printf "<span style='color:red;'>no last access info</span>\n"
+	printf "</pre>\n<p>\n<span style='color:red;'>no last access info</span>\n<br>"
 elif [ -d /home/aaa/store ]; then
-    printf "<span style='color:red;'>access list off for aaa</span>\n"
+    printf "</pre>\n<p>\n<span style='color:red;'>access list off for aaa</span>\n<br>"
 else
 	# Get the date 4 days ago in YYYY-MM-DD format Try Linux, then fall back to current date
 	four_days_ago=$(date -d '-4 days' +%Y-%m-%d 2>/dev/null || date +%Y-%m-%d)
