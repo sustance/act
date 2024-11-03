@@ -105,10 +105,14 @@ else
     	awk -F'[()]' '{print $2}' |  # Extract timestamps
     	tr '\n' ' ' |                # Join lines
     	sed 's/00:0[0-9]//g; s/00//g; s/ 0/ /g')  # Remove leading zeros
-	printf "</pre>\n<p>\n<span style='color:red;'>%s\n</span>\n<br>" "$last_access"
+	printf "</pre>\n<p>\n<span style='color:red;'>%s\n</span>\n<br>" \
+ 		"$last_access"
 fi
+
 printf "\n%s\n</p>\n</div>\n\n\n\n" "$(crontab -l | grep '* * '|sed 's/>\/dev\/null 2>&1/<br>/')"
+
 } > ~/public_html/a.txt
+
 cat ~/public_html/a.txt
 
 #ps -p $$ – Display your current shell name reliably.
