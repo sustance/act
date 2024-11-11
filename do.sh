@@ -1,5 +1,6 @@
 #!/bin/sh
-PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
+PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/run/current-system/sw/bin:/usr/bin
+# /run/current-system/sw/bin/ only for nixos
 export PATH
 # Log file
 LOGFILE=~/logfile.log
