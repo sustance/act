@@ -65,12 +65,11 @@ printf "|%s %s %s %s %s %s %s %s %s %s\n" \
 	"$(command -v curl     >/dev/null 2>&1 && echo "curl"  || echo "<s>curl</s>")" \
 	"$(command -v git      >/dev/null 2>&1 && echo "git"   || echo "<s>git</s>")" \
 	"$(command -v ruby     >/dev/null 2>&1 && echo "ruby"  || echo "<s>ruby</s>")" \
-	"$(command -v newsboat >/dev/null 2>&1 && echo "n'boat"|| echo "<s>n'boat</s>")" \
- 	"$(command -v weechat  >/dev/null 2>&1 && echo "weec'" || echo "<s>weec'</s>")" 
+	"$(command -v newsboat >/dev/null 2>&1 && echo "nwsb"  || echo "<s>nwsb</s>")" \
+ 	"$(command -v weechat  >/dev/null 2>&1 && echo "weec'" || echo "<s>weec'</s>")"
  
 	#"$(command -v finger >/dev/null 2>&1 && echo "finger"|| echo "<s>finger</s>")" \
 	#"$(command -v irssi  >/dev/null 2>&1 && echo "irssi" || echo "<s>irssi</s>")"
-
 
 #printf "|%s %s %s %s %s\n" \
 #        "${C_ID:-N}" \
