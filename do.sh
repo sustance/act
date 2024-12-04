@@ -56,9 +56,8 @@ printf "]%s %-15.15s %s %-5s %-5s %-5s %-8s \n" \
     "$(basename "$SHELL")" 
     # D, P ok $HOSTNAME.... C, E, J, O, T, S  OK cat /proc....
 
-printf "|%s %s %s %s %s %s %s %s %s %s\n" \
+printf "|%s %s %s %s %s %s %s %s %s\n" \
 	"${C_ID:-N}" \
- 	"$(command -v crontab  >/dev/null 2>&1 && echo "cron"  || echo "<s>cron</s>")" \
 	"$(command -v w3m      >/dev/null 2>&1 && echo "w3m"   || echo "<s>w3m</s>")" \
 	"$(command -v lynx     >/dev/null 2>&1 && echo "lynx"  || echo "<s>lynx</s>")" \
 	"$(command -v links    >/dev/null 2>&1 && echo "links" || echo "<s>links</s>")" \
