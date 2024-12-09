@@ -58,17 +58,19 @@ printf "]%s %-15.15s %s %-5s %-5s %-5s %-8s \n" \
 
 printf "|%s %s %s %s %s %s %s %s %s\n" \
 	"${C_ID:-N}" \
-	"$(command -v w3m      >/dev/null 2>&1 && echo "w3m"   || echo "<s>w3m</s>")" \
-	"$(command -v lynx     >/dev/null 2>&1 && echo "lynx"  || echo "<s>lynx</s>")" \
-	"$(command -v links    >/dev/null 2>&1 && echo "links" || echo "<s>links</s>")" \
-	"$(command -v curl     >/dev/null 2>&1 && echo "curl"  || echo "<s>curl</s>")" \
-	"$(command -v git      >/dev/null 2>&1 && echo "git"   || echo "<s>git</s>")" \
-	"$(command -v ruby     >/dev/null 2>&1 && echo "ruby"  || echo "<s>ruby</s>")" \
-	"$(command -v newsboat >/dev/null 2>&1 && echo "newsb'" ||echo "<s>newsb'</s>")" \
- 	"$(command -v weechat  >/dev/null 2>&1 && echo "weec'" || echo "<s>weec'</s>")"
+	"$(command -v w3m      >/dev/null 2>&1 && echo "w3m"    || echo "<s>w3m</s>")" \
+	"$(command -v lynx     >/dev/null 2>&1 && echo "lynx"   || echo "<s>lynx</s>")" \
+	"$(command -v links    >/dev/null 2>&1 && echo "links"  || echo "<s>links</s>")" \
+	"$(command -v curl     >/dev/null 2>&1 && echo "curl"   || echo "<s>curl</s>")" \
+	"$(command -v git      >/dev/null 2>&1 && echo "git"    || echo "<s>git</s>")" \
+	"$(command -v ruby     >/dev/null 2>&1 && echo "ruby"   || echo "<s>ruby</s>")" \
+        "$(command -v jekyll   >/dev/null 2>&1 && echo "jekyll" || echo "<s>jekyll</s>")" \
+        "$(command -v bundler >/dev/null 2>&1 && echo "bundler" || echo "<s>bundler</s>")" \
+	"$(command -v newsboat >/dev/null 2>&1 && echo "newsb"  || echo "<s>newsb</s>")" \
+ 	"$(command -v weechat  >/dev/null 2>&1 && echo "weec "  || echo "<s>weec</s>")"
  
-	#"$(command -v finger >/dev/null 2>&1 && echo "finger"|| echo "<s>finger</s>")" \
-	#"$(command -v irssi  >/dev/null 2>&1 && echo "irssi" || echo "<s>irssi</s>")"
+	#"$(command -v finger >/dev/null 2>&1 && echo "finger"  || echo "<s>finger</s>")" \
+	#"$(command -v irssi  >/dev/null 2>&1 && echo "irssi"   || echo "<s>irssi</s>")"
 
 #printf "|%s %s %s %s %s\n" \
 #        "${C_ID:-N}" \
