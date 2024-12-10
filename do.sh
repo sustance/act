@@ -65,7 +65,7 @@ printf "|%s %s %s %s %s %s %s %s %s\n" \
 	"$(command -v git      >/dev/null 2>&1 && echo "git"    || echo "<s>git</s>")" \
 	"$(command -v ruby     >/dev/null 2>&1 && echo "ruby"   || echo "<s>ruby</s>")" \
         "$(command -v jekyll   >/dev/null 2>&1 && echo "jekyll" || echo "<s>jekyll</s>")" \
-        "$(command -v bundler >/dev/null 2>&1 && echo "bundler" || echo "<s>bundler</s>")" \
+ #       "$(command -v bundler >/dev/null 2>&1 && echo "bundler" || echo "<s>bundler</s>")" \
 	"$(command -v newsboat >/dev/null 2>&1 && echo "newsb"  || echo "<s>newsb</s>")" \
  	"$(command -v weechat  >/dev/null 2>&1 && echo "weec "  || echo "<s>weec</s>")"
  
