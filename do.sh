@@ -57,13 +57,12 @@ printf "]%s %-15.15s %-3s %-5s %-4s %-4s %-4s %-8s \n" \
     "$(basename "$SHELL")" 
     # D, P ok $HOSTNAME.... C, E, J, O, T, S  OK cat /proc....
 
-printf "|%s %s %s %s %s %s %s %s %s\n" \
+printf "|%s %s %s %s %s %s %s %s\n" \
 	"${C_ID:-N}" \
 	"$(command -v w3m      >/dev/null 2>&1 && echo "w3m"    || echo "<s>w3m</s>")" \
 	"$(command -v lynx     >/dev/null 2>&1 && echo "lynx"   || echo "<s>lynx</s>")" \
 	"$(command -v links    >/dev/null 2>&1 && echo "links"  || echo "<s>links</s>")" \
 	"$(command -v git      >/dev/null 2>&1 && echo "git"    || echo "<s>git</s>")" \
-	"$(command -v ruby     >/dev/null 2>&1 && echo "ruby"   || echo "<s>ruby</s>")" \
         "$(command -v jekyll   >/dev/null 2>&1 && echo "jekyll" || echo "<s>jeky</s>")" \
 	"$(command -v newsboat >/dev/null 2>&1 && echo "newsb"  || echo "<s>nwsb</s>")" \
  	"$(command -v weechat  >/dev/null 2>&1 && echo "weec "  || echo "<s>weec</s>")"
