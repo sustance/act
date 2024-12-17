@@ -44,13 +44,12 @@ overall_avg=$(awk '
 {
 printf "\n<pre>"
 printf "   <u>%-15.15s %-3s %-4s %-4s %-4s %-4s</u> \n" \
-	"Hostname" "OS" "Tilde" "Lua" "Php" "Rub" "r-Sh"
+	"Hostname" "OS" "Lua" "Php" "Rub" "rSh"
            
-printf "]%s %-15.15s %-3s %-5s %-4s %-4s %-4s %-8s \n" \
+printf "]%s %-15.15s %-3s %-5s %-4s %-4s %-8s \n" \
     "${C_ID:-N}" \
     "${HOSTNAME} $(cat /proc/sys/kernel/hostname)" \
     "$(uname | cut -c -3 )" \
-    "$(tilde -V 2>/dev/null | grep "Tilde v" | sed 's/Tilde version //' || echo "<s>tilde</s>")" \
     "$(lua -v 2>/dev/null   | awk 'NR==1 {print $2}' | cut -d. -f1,2 || echo "<s>lua</s>")" \
     "$(php --version 2>/dev/null | awk 'NR==1 {print $2}' | cut -d. -f1,2 || echo "<s>php</s>")" \
     "$(ruby -v 2>/dev/null  | awk 'NR==1 {print $2}' | cut -d. -f1,2 || echo "<s>ruby</s>")" \
