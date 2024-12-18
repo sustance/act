@@ -1,11 +1,8 @@
 #!/bin/sh
 PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/run/current-system/sw/bin:/usr/bin
-# /run/current-system/sw/bin/ only for nixos
 export PATH
-# Log file
 LOGFILE=~/logfile.log
 
-# Commands
 echo "Running script at $(date)" >> $LOGFILE
 echo "Running as user: $(whoami)" >> $LOGFILE
 grep --version >> $LOGFILE 2>&1
