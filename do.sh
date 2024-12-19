@@ -60,7 +60,7 @@ printf "|%s %s %s %s %s %s %s %s\n" \
 	"$(command -v lynx     >/dev/null 2>&1 && echo "lynx"   || echo "<s>lynx</s>")" \
 	"$(command -v links    >/dev/null 2>&1 && echo "links"  || echo "<s>links</s>")" \
 	"$(command -v git      >/dev/null 2>&1 && echo "git"    || echo "<s>git</s>")" \
-        "$(command -v jekyll   >/dev/null 2>&1 && echo "jekyll" || echo "<s>jeky</s>")" \
+        "$(command -v jekyll   >/dev/null 2>&1 && echo "jeky" || echo "<s>jeky</s>")" \
 	"$(command -v newsboat >/dev/null 2>&1 && echo "newsb"  || echo "<s>nwsb</s>")" \
  	"$(command -v weechat  >/dev/null 2>&1 && echo "weec "  || echo "<s>weec</s>")"
  
