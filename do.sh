@@ -51,8 +51,8 @@ printf "]%s %-10.10s %-3s %-3s %-3s %-3s %-2s\n" \
     "$(lua -v 2>/dev/null  | awk 'NR==1 {print $2}' | cut -d. -f1,2 || echo "<s>lua</s>")" \
     "$(php -v 2>/dev/null  | awk 'NR==1 {print $2}' | cut -d. -f1,2 || echo "<s>php</s>")" \
     "$(ruby -v 2>/dev/null | awk 'NR==1 {print $2}' | cut -d. -f1,2 || echo "<s>rby</s>")" \
-    "$(gem -v 2>/dev/null  | cut -d. -f1,2 || echo "<s>gem</s>")"
-    #"$(basename "$SHELL")" 
+    "$(gem -v 2>/dev/null  | cut -d. -f1,2 || echo "<s>gem</s>")" \
+    "$(basename "$SHELL")" 
     # D, P ok $HOSTNAME.... C, E, J, O, T, S  OK cat /proc....
 
 printf "|%s %s %s %s %s %s %s %s\n" \
