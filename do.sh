@@ -41,7 +41,7 @@ overall_avg=$(awk '
 {
 printf "\n<pre>"
 printf "   <u>%-10.10s %-3s %-3s %-3s %-3s %-3s %-3s</u>\n"\
-    "Hostname" "OS" "Lua" "Php" "Rby" "Gem" "Sh"
+    "Hostname" "OS" "Lua" "Php" "Rb" "Gem" "Sh"
            
 printf "]%s %-10.10s %-3s %-3s %-3s %-3s %-3s %-3s\n"\
     "${C_ID:-N}" \
@@ -49,7 +49,7 @@ printf "]%s %-10.10s %-3s %-3s %-3s %-3s %-3s %-3s\n"\
     "$(uname | cut -c -3 )" \
     "$(lua -v 2>/dev/null | awk 'NR==1 {print $2}'|cut -d. -f1,2 || echo "<s>lua</s>")" \
     "$(php -v 2>/dev/null | awk 'NR==1 {print $2}'|cut -d. -f1,2 || echo "<s>php</s>")" \
-    "$(ruby -v 2>/dev/null| awk 'NR==1 {print $2}'|cut -d. -f1,2 || echo "<s>rby</s>")" \
+    "$(ruby -v 2>/dev/null| awk 'NR==1 {print $2}'|cut -d. -f1,2 || echo "<s>rb</s>")" \
     "$(gem -v 2>/dev/null | cut -d. -f1,2 || echo "<s>gem</s>")" \
     "$(basename "$SHELL")" 
     # D, P ok $HOSTNAME.... C, E, J, O, T, S  OK cat /proc....
