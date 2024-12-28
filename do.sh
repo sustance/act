@@ -40,19 +40,18 @@ overall_avg=$(awk '
 # Generate output, C_ID is set with command as a label 
 {
 printf "\n<pre>"
-printf "   <u>%-10.10s %-3s %-3s %-3s %-3s %-3s</u>\n" \
-    "Hostname" "OS" "Lua" "Php" "Rby" "Gem"
- 	#"Sh"
+printf "   <u>%-10.10s %s %s %s %s %s</u>\n"\
+    "Hostname" "OS" "Lua" "Php" "Rby" "Gem" "Sh"
            
-printf "]%s %-10.10s %-3s %-3s %-3s %-3s\n" \
+printf "]%s %-10.10s %s %s %s %s %s %s\n"\
     "${C_ID:-N}" \
-    "${HOSTNAME} $(cat /proc/sys/kernel/hostname)" \
+	"${HOSTNAME} $(cat /proc/sys/kernel/hostname)" \
     "$(uname | cut -c -3 )" \
     "$(lua -v 2>/dev/null | awk 'NR==1 {print $2}'|cut -d. -f1,2 || echo "<s>lua</s>")" \
     "$(php -v 2>/dev/null | awk 'NR==1 {print $2}'|cut -d. -f1,2 || echo "<s>php</s>")" \
     "$(ruby -v 2>/dev/null| awk 'NR==1 {print $2}'|cut -d. -f1,2 || echo "<s>rby</s>")" \
-    "$(gem -v 2>/dev/null | cut -d. -f1,2 || echo "<s>gem</s>")"
-    #"$(basename "$SHELL")" 
+    "$(gem -v 2>/dev/null | cut -d. -f1,2 || echo "<s>gem</s>")" \
+    "$(basename "$SHELL")" 
     # D, P ok $HOSTNAME.... C, E, J, O, T, S  OK cat /proc....
 
 printf "|%s %s %s %s %s %s %s %s\n" \
