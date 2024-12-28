@@ -40,10 +40,10 @@ overall_avg=$(awk '
 # Generate output, C_ID is set with command as a label 
 {
 printf "\n<pre>"
-printf "   <u>%-10.10s %s %s %s %s %s</u>\n"\
+printf "   <u>%-10.10s %-3s %-3s %-3s %-3s %-3s %-3s</u>\n"\
     "Hostname" "OS" "Lua" "Php" "Rby" "Gem" "Sh"
            
-printf "]%s %-10.10s %s %s %s %s %s %s\n"\
+printf "]%s %-10.10s %-3s %-3s %-3s %-3s %-3s %-3s\n"\
     "${C_ID:-N}" \
 	"${HOSTNAME} $(cat /proc/sys/kernel/hostname)" \
     "$(uname | cut -c -3 )" \
