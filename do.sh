@@ -54,15 +54,18 @@ printf "]%s %-10.10s %-3s %-3s %-3s %-3s %-3s %-3s\n"\
     "$(basename "$SHELL")" 
     # D, P ok $HOSTNAME.... C, E, J, O, T, S  OK cat /proc....
 
-printf "|%s %s %s %s %s %s %s %s\n" \
+printf "|%s %s %s %s %s %s %s %s %s %s %s\n" \
 	"${C_ID:-N}" \
 	"$(command -v w3m      >/dev/null 2>&1 && echo "w3m"  || echo "<s>w3m</s>"  )" \
 	"$(command -v lynx     >/dev/null 2>&1 && echo "lynx" || echo "<s>lynx</s>" )" \
 	"$(command -v links    >/dev/null 2>&1 && echo "links"|| echo "<s>links</s>")" \
 	"$(command -v git      >/dev/null 2>&1 && echo "git"  || echo "<s>git</s>"  )" \
-    "$(command -v jekyll   >/dev/null 2>&1 && echo "jeky" || echo "<s>jeky</s>" )" \
+    "$(command -v jekyll   >/dev/null 2>&1 && echo "jek" || echo "<s>jek</s>" )" \
 	"$(command -v newsboat >/dev/null 2>&1 && echo "nwsb" || echo "<s>nwsb</s>" )" \
- 	"$(command -v weechat  >/dev/null 2>&1 && echo "weec" || echo "<s>weec</s>" )"
+ 	"$(command -v weechat  >/dev/null 2>&1 && echo "wee" || echo "<s>wee</s>" )" \
+  "$(command -v tldr  >/dev/null 2>&1 && echo "tldr" || echo "<s>tldr</s>" )" \
+  "$(command -v exa  >/dev/null 2>&1 && echo "exa" || echo "<s>exa</s>" )" \
+  "$(command -v fzf  >/dev/null 2>&1 && echo "fzf" || echo "<s>fzf</s>" )"
  
 printf "[%s %s\n" \
 	"${C_ID:-N}" \
