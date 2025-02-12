@@ -58,7 +58,7 @@ printf "|%s %s %s %s %s %s %s %s %s %s %s\n" \
 	"${C_ID:-N}" \
 	"$(command -v w3m      >/dev/null 2>&1 && echo "w3m"  || echo "<s>w3m</s>"  )" \
 	"$(command -v lynx     >/dev/null 2>&1 && echo "lynx" || echo "<s>lynx</s>" )" \
-	"$(command -v links    >/dev/null 2>&1 && echo "links"|| echo "<s>links</s>")" \
+	"$(command -v make    >/dev/null 2>&1 && echo "make"|| echo "<s>make</s>")" \
 	"$(command -v git      >/dev/null 2>&1 && echo "git"  || echo "<s>git</s>"  )" \
     "$(command -v jekyll   >/dev/null 2>&1 && echo "jek" || echo "<s>jek</s>" )" \
 	"$(command -v newsboat >/dev/null 2>&1 && echo "nwsb" || echo "<s>nwsb</s>" )" \
