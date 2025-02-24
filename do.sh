@@ -66,7 +66,7 @@ printf "|%s %s %s %s %s %s %s %s %s %s %s %s\n" \
   	"$(command -v exa      >/dev/null 2>&1 && echo "exa" || echo "<s>exa</s>"  )" \
   	"$(command -v eza      >/dev/null 2>&1 && echo "eza" || echo "<s>eza</s>"  )" \
   	"$(command -v fzf      >/dev/null 2>&1 && echo "fzf" || echo "<s>fzf</s>"  )" \
-   	"$(command -v tgpt     >/dev/null 2>&1 && echo "tgpt"|| echo "<s>tgpt</s>" )"
+   	"$(command -v ${HOME}/.local/bin/tgpt >/dev/null 2>&1 && echo "tgpt" || echo "<s>tgpt</s>")"
  
 printf "[%s %s\n" \
 	"${C_ID:-N}" \
