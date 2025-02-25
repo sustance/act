@@ -73,6 +73,17 @@ printf "[%s %s\n" \
 	"$(grep "^$(whoami):" /etc/passwd | \
 	sed 's/identit//g; s/id2/d2/g; s/aaa/aa/g; s/in//; s/sr//; s/ome//; s/nfo//; s/kg//; s/ocal//; s/,,,//; s/User \&// ; s/:100:/: 100:/')" 
 
+#!/bin/bash
+
+# Check if .local/bin is in the PATH
+if [[ ":$PATH:" == *":/home/$USER/.local/bin:"* ]]; then
+    printf ".local/bin is in the PATH" " "
+else
+    printf ".local/bin is not in the PATH" " "
+fi
+
+
+
 printf "   <u>%-8s %-8s|%-3s %-3s %-3s %-3s</u>\n" \
     "@H.K." "@Site" "dns" "h.k" "ave" "Ping"	
 
