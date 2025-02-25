@@ -77,9 +77,9 @@ printf "[%s %s\n" \
 
 # Check if .local/bin is in the PATH
 if [[ ":$PATH:" == *":/home/$USER/.local/bin:"* ]]; then
-    printf ".local/bin is in the PATH" " "
+    printf ".local/bin is in the PATH\n" " "
 else
-    printf ".local/bin is not in the PATH" " "
+    printf ".local/bin is not in the PATH\n" " "
 fi
 
 
