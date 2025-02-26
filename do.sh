@@ -76,12 +76,13 @@ printf "[%s %s\n" \
 #!/bin/bash
 
 # Check if .local/bin is in the PATH
-if [[ ":$PATH:" == *":/home/$USER/.local/bin:"* ]]; then
-    printf ".local/bin is in the PATH\n" " "
+if [[ "$PATH:" == *":/home/$USER/.local/bin:"* ]]; then
+    printf "(%s .local/bin is in the PATH\n" "${C_ID:-N}"
 else
-    printf ".local/bin is not in the PATH\n" " "
+    printf "(%s .local/bin is not in the PATH\n" "${C_ID:-N}"
 fi
 
+printf ")%s %s\n" "${C_ID:-N}" "$PATH"
 
 
 printf "   <u>%-8s %-8s|%-3s %-3s %-3s %-3s</u>\n" \
