@@ -81,8 +81,8 @@ if [[ "$PATH:" == *":/home/$USER/.local/bin:"* ]]; then
 else
     printf "(%s .local/bin is not in the PATH\n" "${C_ID:-N}"
 fi
-
-printf ")%s %s\n" "${C_ID:-N}" "echo $PATH | sed 's/current-system/c-s/g' | sed 's/bin/b/g' | sed 's/local/l/g' | sed 's/run/r/g' | sed 's/usr/u/g' "
+printf ")%s %s\n" "${C_ID:-N}" "$PATH"
+#printf ")%s %s\n" "${C_ID:-N}" "echo $PATH | sed 's/current-system/c-s/g' | sed 's/bin/b/g' | sed 's/local/l/g' | sed 's/run/r/g' | sed 's/usr/u/g' "
 
 printf "   <u>%-8s %-8s|%-3s %-3s %-3s %-3s</u>\n" \
     "@H.K." "@Site" "dns" "h.k" "ave" "Ping"	
