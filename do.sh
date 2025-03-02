@@ -1,7 +1,7 @@
 #!/bin/sh
-PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/run/current-system/sw/bin:/usr/bin
-export PATH
-LOGFILE=~/logfile.log
+#PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/run/current-system/sw/bin:/usr/bin
+#export PATH
+#LOGFILE=~/logfile.log
 
 echo "Running script at $(date)" >> $LOGFILE
 echo "Running as user: $(whoami)" >> $LOGFILE
