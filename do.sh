@@ -1,7 +1,7 @@
+#!/usr/bin/env bash
+
 #!/bin/bash
-
 source .bashrc 
-
 #PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/run/current-system/sw/bin:/usr/bin
 #export PATH
 #LOGFILE=~/logfile.log
