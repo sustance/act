@@ -90,7 +90,7 @@ printf ")%s %s\n" "${C_ID:-N}" "$PATH"
 printf "   <u>%-8s %-8s|%-3s %-3s %-3s %-3s</u>\n" \
     "@H.K." "@Site" "dns" "h.k" "ave" "Ping"	
 
-printf "-%s  %-8s %-8s %-3s %-3s %-3s %-3s\n" \
+printf ">%s %-8s %-8s %-3s %-3s %-3s \n" \
     "${C_ID:-N}" \
     "$(TZ=UTC-8 date +'%H:%M/%d' 2>/dev/null || date +'%H:%M/%d')" \
     "$(date +'%H:%M/%d')" \
