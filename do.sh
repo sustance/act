@@ -6,11 +6,12 @@ source .bashrc
 #export PATH
 #LOGFILE=~/logfile.log
 
-echo "Running script at $(date)" >> $LOGFILE
-echo "Running as user: $(whoami)" >> $LOGFILE
-grep --version >> $LOGFILE 2>&1
-date >> $LOGFILE 2>&1
-ping -c 1 google\.com >> $LOGFILE 2>&1
+#echo "Running script at $(date)" >> $LOGFILE
+#echo "Running as user: $(whoami)" >> $LOGFILE
+#grep --version >> $LOGFILE 2>&1
+#date >> $LOGFILE 2>&1
+#ping -c 1 google\.com >> $LOGFILE 2>&1
+
 #{\033[30;37m%}  identity2@bsd:~ $ cat logfile.log 
 #Running script at Sat Nov  2 11:03:26 UTC 2024
 #Running as user: identity2
@@ -90,7 +91,7 @@ printf ")%s %s\n" "${C_ID:-N}" "$PATH"
 printf "   <u>%-8s %-8s|%-3s %-3s %-3s %-3s</u>\n" \
     "@H.K." "@Site" "dns" "h.k" "ave" "Ping"	
 
-printf ">%s %-8s %-8s %-3s %-3s %-3s \n" \
+printf ">%s %-8s %-8s %-3s %-3s %-3s %-3s\n" \
     "${C_ID:-N}" \
     "$(TZ=UTC-8 date +'%H:%M/%d' 2>/dev/null || date +'%H:%M/%d')" \
     "$(date +'%H:%M/%d')" \
@@ -98,8 +99,8 @@ printf ">%s %-8s %-8s %-3s %-3s %-3s \n" \
        	| awk -F'/' 'END {printf "%.0f\n", $5}' || echo "NA")" \
     "$(ping -c 1 -w 1 123.255.88.1 >/dev/null 2>&1 && ping -c 3 123.255.88.1 2>/dev/null \
         | awk -F'/' 'END {printf "%.0f\n", $5}' || echo "NA")" \
-    "$overall_avg" 
-    #"$total_count"
+    "$overall_avg" \
+    "$total_count"
     #123.255.91.198 an alternate 203.104.103.86 Japan Net Info Ctr (JPNIC)
     	
 if [ -d /home/i/identity ]; then
