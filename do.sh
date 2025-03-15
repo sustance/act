@@ -87,11 +87,12 @@ else
 fi
 
 
-#printf ")%s %s\n" "${C_ID:-N}" "$PATH"
+  
+tiny_path=$( echo "$PATH" | sed -e 's/current-system/c-s/g' -e 's/bin/b/g' -e 's/local/l/g' )
+printf ")%s %s\n" "${C_ID:-N}" "$tiny_path" 
 
-printf ")%s %s\n" "${C_ID:-N}" "echo $PATH | \
-	sed -e 's/current-system/c-s/g' -e 's/bin/b/g' -e 's/local/l/g' -e 's/run/r/g' -e 's/usr/u/g' "
-
+#printf ")%s %s\n" "${C_ID:-N}" "echo $PATH | sed -e 's/current-system/c-s/g' -e 's/bin/b/g' -e 's/local/l/g' -e 's/run/r/g' -e 's/usr/u/g' "
+ 
 printf "   <u>%-8s %-8s|%-3s %-3s %-3s %-3s</u>\n" \
     "@H.K." "@Site" "dns" "h.k" "ave" "Ping"	
 
