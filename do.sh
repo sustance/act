@@ -87,7 +87,6 @@ else
     printf "(%s .local/bin is not in the PATH\n" "${C_ID:-N}"
 fi
 
-
 tiny_path=$( echo "$PATH" | sed -e 's/current-system/c-s/g' -e 's/bin/b/g' -e 's/usr/u/g' -e 's/local/l/g' -e 's/games/g/g' -e 's/home/h/g' -e 's/identity/I/g' )
 printf ")%s %s\n" "${C_ID:-N}" "$tiny_path" 
  
