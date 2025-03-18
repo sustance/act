@@ -45,7 +45,7 @@ overall_avg=$(awk '
 {
 printf "\n<pre>"
 printf "   <u>%-10.10s %-3s %-3s %-3s %-3s %-3s %-3s</u>\n"\
-    "Hostname" "OS" "Lua" "Php" "Rb" "Gem" "Sh"
+    "Hostname" "Os" "Lua" "Php" "Rb" "Gem" "Sh"
            
 printf "]%s %-10.10s %-3s %-3s %-3s %-3s %-3s %-3s\n"\
     "${C_ID:-N}" \
@@ -90,10 +90,10 @@ fi
 tiny_path=$( echo "$PATH" | sed -e 's/current-system/c-s/g' -e 's/bin/b/g' -e 's/usr/u/g' -e 's/local/l/g' -e 's/games/g/g' -e 's/home/h/g' -e 's/identity/I/g' )
 printf ")%s %s\n" "${C_ID:-N}" "$tiny_path" 
  
-printf "   <u>%-8s %-8s|%-3s %-3s %-3s %-3s</u>\n" \
-    "@H.K." "@Site" "dns" "h.k" "ave" "Ping"	
+#printf "   <u>%-8s %-8s|%-3s %-3s %-3s %-3s</u>\n" \
+#    "@H.K." "@Site" "dns" "h.k" "ave" "Ping"	
 
-printf ">%s %-8s %-8s %-3s %-3s %-3s %-3s\n" \
+printf ">%s hk%-8s lo%-8s %-3s dns%-3s hk%-3s ave%-3s\n" \
     "${C_ID:-N}" \
     "$(TZ=UTC-8 date +'%H:%M/%d' 2>/dev/null || date +'%H:%M/%d')" \
     "$(date +'%H:%M/%d')" \
