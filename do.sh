@@ -70,15 +70,11 @@ printf "|%s %s %s %s %s %s %s %s %s %s %s\n" \
   	"$(command -v eza      >/dev/null 2>&1 && echo "eza" || echo "<s>eza</s>"  )" \
   	"$(command -v fzf      >/dev/null 2>&1 && echo "fzf" || echo "<s>fzf</s>"  )" \
    	"$(command -v ${HOME}/.local/bin/tgpt >/dev/null 2>&1 && echo "tgpt" || echo "<s>tgpt</s>")"
-    
-      	#"$(command -v exa      >/dev/null 2>&1 && echo "exa" || echo "<s>exa</s>"  )" \
  
 printf "[%s %s\n" \
 	"${C_ID:-N}" \
 	"$(grep "^$(whoami):" /etc/passwd | \
 	sed 's/identit//g; s/id2/d2/g; s/aaa/aa/g; s/in//; s/sr//; s/ome//; s/nfo//; s/kg//; s/ocal//; s/,,,//; s/User \&// ; s/:100:/: 100:/')" 
-
-#!/bin/bash
 
 # Check if .local/bin is in the PATH
 if [[ "$PATH:" == *":/home/$USER/.local/bin:"* ]]; then
@@ -90,20 +86,14 @@ fi
 tiny_path=$( echo "$PATH" | sed -e 's/current-system/c-s/g' -e 's/bin/b/g' -e 's/usr/u/g' -e 's/local/l/g' -e 's/games/g/g' -e 's/home/h/g' -e 's/identity/I/g' )
 printf ")%s %s\n" "${C_ID:-N}" "$tiny_path" 
  
-#printf "   <u>%-8s %-8s|%-3s %-3s %-3s %-3s</u>\n" \
-#    "@H.K." "@Site" "dns" "h.k" "ave" "Ping"	
+#printf "   <u>%-8s %-8s|%-3s %-3s %-3s %-3s</u>\n" "@H.K." "@Site" "dns" "h.k" "ave" "Ping"	
 
 printf ">%s %-8s %-8s |dn%-3s hk%-3s av%-3s\n" \
     "${C_ID:-N}" \
-    "$(TZ=UTC-8 date +'%H:%M/%d' 2>/dev/null || date +'%H:%M/%d')" \
-    "$(date +'%H:%M/%d')" \
-    "
-    " \
-    "$(ping -c 1 -w 1 123.255.88.1 >/dev/null 2>&1 && ping -c 3 123.255.88.1 2>/dev/null \
-        | awk -F'/' 'END {printf "%.0f\n", $5}' || echo "NA")" \
+    "$(TZ=UTC-8 date +'%H:%M/%d' 2>/dev/null || date +'%H:%M/%d')" "$(date +'%H:%M/%d')" \
+    "$(ping -c 1 -w 1 hktv.com >/dev/null 2>&1 && ping -c 3 hktv.com 2>/dev/null| awk -F'/' 'END {printf "%.0f\n", $5}' || echo "NA")" \
     "$overall_avg" \
     "$total_count"
-    #123.255.91.198 an alternate 203.104.103.86 Japan Net Info Ctr (JPNIC)
     	
 if [ -d /home/i/identity ]; then
 	printf "</pre>\n<p>\n<span style='color:red;'>no last access info</span>\n<br>"
