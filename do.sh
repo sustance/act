@@ -93,7 +93,7 @@ printf ")%s %s\n" "${C_ID:-N}" "$tiny_path"
 #printf "   <u>%-8s %-8s|%-3s %-3s %-3s %-3s</u>\n" \
 #    "@H.K." "@Site" "dns" "h.k" "ave" "Ping"	
 
-printf ">%s hk%-8s lo%-8s %-3s dns%-3s hk%-3s ave%-3s\n" \
+printf ">%s hk,%-8s %-8s %-3s |dns,%-3s hk,%-3s ave,%-3s ping\n" \
     "${C_ID:-N}" \
     "$(TZ=UTC-8 date +'%H:%M/%d' 2>/dev/null || date +'%H:%M/%d')" \
     "$(date +'%H:%M/%d')" \
