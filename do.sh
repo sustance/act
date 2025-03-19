@@ -1,32 +1,5 @@
 #!/usr/bin/env bash
-
-#!/bin/bash
 source .bashrc 
-#PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/run/current-system/sw/bin:/usr/bin
-#export PATH
-#LOGFILE=~/logfile.log
-
-#echo "Running script at $(date)" >> $LOGFILE
-#echo "Running as user: $(whoami)" >> $LOGFILE
-#grep --version >> $LOGFILE 2>&1
-#date >> $LOGFILE 2>&1
-#ping -c 1 google\.com >> $LOGFILE 2>&1
-
-#{\033[30;37m%}  identity2@bsd:~ $ cat logfile.log 
-#Running script at Sat Nov  2 11:03:26 UTC 2024
-#Running as user: identity2
-##grep (BSD grep, GNU compatible) 2.6.0-FreeBSD
-#Sat Nov  2 11:03:26 UTC 2024
-#PING(56=40+8+8 bytes) 2a01:4f8:252:3e22::52 --> 2a00:1450:4001:808::200e
-#16 bytes from 2a00:1450:4001:808::200e, icmp_seq=0 hlim=118 time=5.157 ms
-#%{\033[30;37m%}  identity2@bsd:~ $ cat logfile.log 
-#Running script at Sat Nov  2 11:03:26 UTC 2024
-#Running as user: identity2
-#grep (BSD grep, GNU compatible) 2.6.0-FreeBSD
-#Sat Nov  2 11:03:26 UTC 2024
-#PING(56=40+8+8 bytes) 2a01:4f8:252:3e22::52 --> 2a00:1450:4001:808::200e
-#16 bytes from 2a00:1450:4001:808::200e, icmp_seq=0 hlim=118 time=5.157 ms
-
 
 # Calculate ping averages Use awk 
 overall_avg=$(awk '
@@ -119,6 +92,7 @@ else
  		"$last_access"
 fi
 
+
 printf "\n%s\n</p>\n</div>\n\n\n\n" "$(crontab -l | grep '* * '|sed 's/>\/dev\/null 2>&1/<br>/')"
 } > ~/public_html/a.txt
 
@@ -128,5 +102,3 @@ cat ~/public_html/a.txt
 #echo "$SHELL" – Print the shell for the current user but not necessarily the shell that is running at the movement.
 #echo $0 – Another reliable and simple method to get the current shell interpreter name on Linux or Unix-like systems.
 #readlink /proc/$$/exe – Another option to get the current shell name reliably on Linux operating systems.
-#cat /etc/shells – List pathnames of valid login shells currently installed
-#NO RESULT grep "^$USER" /etc/passwd – Print the default shell name. The default shell runs when you open a terminal window.
