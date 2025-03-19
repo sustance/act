@@ -39,14 +39,15 @@ overall_avg=$(awk '
             print "NA"
     }
 ' "${HOME}/.local/ping.txt")
-#echo "Overall average: $overall_avg"
+
 
 # Generate output, C_ID is set with command as a label 
 {
 printf "\n<pre>"
 printf "   <u>%-10.10s %-3s %-3s %-3s %-3s %-3s %-3s</u>\n"\
     "Hostname" "Os" "Lua" "Php" "Rb" "Gem" "Sh"
-           
+
+	   
 printf "]%s %-10.10s %-3s %-3s %-3s %-3s %-3s %-3s\n"\
     "${C_ID:-N}" \
 	"${HOSTNAME} $(cat /proc/sys/kernel/hostname)" \
@@ -57,6 +58,7 @@ printf "]%s %-10.10s %-3s %-3s %-3s %-3s %-3s %-3s\n"\
     "$(gem -v 2>/dev/null | cut -d. -f1,2 || echo "<s>gem</s>")" \
     "$(basename "$SHELL")" 
     # D, P ok $HOSTNAME.... C, E, J, O, T, S  OK cat /proc....
+
 
 printf "|%s %s %s %s %s %s %s %s %s %s\n" \
 	"${C_ID:-N}" \
@@ -69,6 +71,7 @@ printf "|%s %s %s %s %s %s %s %s %s %s\n" \
   	"$(command -v tldr     >/dev/null 2>&1 && echo "tldr"|| echo "<s>tldr</s>" )" \
   	"$(command -v fzf      >/dev/null 2>&1 && echo "fzf" || echo "<s>fzf</s>"  )" \
    	"$(command -v ${HOME}/.local/bin/tgpt >/dev/null 2>&1 && echo "tgpt" || echo "<s>tgpt</s>")"
+
  
 printf "[%s %s\n" \
 	"${C_ID:-N}" \
@@ -86,7 +89,7 @@ tiny_path=$( echo "$PATH" | sed -e 's/current-system/c-s/g' -e 's/bin/b/g' -e 's
 printf ")%s %s\n" "${C_ID:-N}" "$tiny_path" 
 
  
-#printf "   <u>%-8s %-8s|%-3s %-3s %-3s %-3s</u>\n" "@H.K." "@Site" "dns" "h.k" "ave" "Ping"	
+#printf "   <u>%-8s %-8s|%-3s %-3s %-3s %-3s</u>\n" "@H.K." "@Site" "dns" "h.k" "ave" "ping"	
 
 
 printf ">%s %-8s %-8s |dn%-3s hk%-3s av%-3s to%-3s\n" \
@@ -116,8 +119,8 @@ else
  		"$last_access"
 fi
 
-printf "\n%s\n</p>\n</div>\n\n\n\n" "$(crontab -l | grep '* * '|sed 's/>\/dev\/null 2>&1/<br>/')"
-
+#printf "\n%s\n</p>\n</div>\n\n\n\n" "$(crontab -l | grep '* * '|sed 's/>\/dev\/null 2>&1/<br>/')"
+printf "\n%s\n</p>\n</div>\n\n\n\n" "$(crontab -l | sed 's/>\/dev\/null 2>&1/<br>/')"
 } > ~/public_html/a.txt
 
 cat ~/public_html/a.txt
