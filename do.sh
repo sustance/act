@@ -49,7 +49,7 @@ printf "|%s %s %s %s %s %s %s %s %s %s\n" \
 printf "[%s %s\n" \
 	"${C_ID:-N}" \
 	"$(grep "^$(whoami):" /etc/passwd | \
-	sed 's/identit//g; s/id2/d2/g; s/aaa/aa/g; s/in//; s/sr//; s/ome//; s/nfo//; s/kg//; s/ocal//; s/,,,//; s/User \&// ; s/:100:/: 100:/')" 
+	sed 's/identit//g; s/id2/d2/g; s/aaa/aa/g; s/in//; s/sr//; s/current-system/c-s/; s/ome//; s/nfo//; s/kg//; s/ocal//; s/,,,//; s/User \&// ; s/:100:/: 100:/')" 
 
 # Check if .local/bin is in the PATH
 if [[ "$PATH:" == *":/home/$USER/.local/bin:"* ]]; then
