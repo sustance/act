@@ -43,6 +43,7 @@ printf "|%s %s %s %s %s %s %s %s %s %s\n" \
  	"$(command -v weechat  >/dev/null 2>&1 && echo "wee" || echo "<s>wee</s>"  )" \
   	"$(command -v tldr     >/dev/null 2>&1 && echo "tldr"|| echo "<s>tldr</s>" )" \
   	"$(command -v fzf      >/dev/null 2>&1 && echo "fzf" || echo "<s>fzf</s>"  )" \
+     	"$(command -v rtorrent >/dev/null 2>&1 && echo "rto" || echo "<s>rto</s>"  )" \
    	"$(command -v ${HOME}/.local/bin/tgpt >/dev/null 2>&1 && echo "tgpt" || echo "<s>tgpt</s>")"
 
  
