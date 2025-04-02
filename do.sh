@@ -32,7 +32,7 @@ printf "]%s %-10.10s %-3s %-3s %-3s %-3s %-3s %-3s\n"\
     "$(basename "$SHELL")" 
     # D, P ok $HOSTNAME.... C, E, J, O, T, S  OK cat /proc....
 
-printf "<%s %s %s %s %s %s %s %s\n" \
+printf "!%s %s %s %s %s %s %s %s\n" \
 	"${C_ID:-N}" \
 	"$(command -v w3m      >/dev/null 2>&1 && echo "w3m" || echo "<s>w3m</s>"  )" \
 	"$(command -v lynx     >/dev/null 2>&1 && echo "lynx"|| echo "<s>lynx</s>" )" \
