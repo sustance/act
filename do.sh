@@ -16,7 +16,7 @@ overall_avg=$(awk '
 
 # Generate output, C_ID is set with command as a label 
 {
-printf "\n<pre>"
+printf "\n<p>"
 printf "   <u>%-10.10s %-3s %-3s %-3s %-3s %-3s %-3s</u>\n"\
     "Hostname" "Os" "Lua" "Php" "Rb" "Gem" "Sh"
 
@@ -78,9 +78,9 @@ printf ">%s %-8s %-8s |dn.%-3s hk.%-3s av.%-3s %-3s\n" \
 
     	
 if [ -d /home/i/identity ]; then
-	printf "</pre>\n<p>\n<span style='color:red;'>no last access info</span>\n<br>"
+	printf "</p>\n<p>\n<span style='color:red;'>no last access info</span>\n<br>"
 elif [ -d /home/aaa/store ]; then
-    printf "</pre>\n<p>\n<span style='color:red;'>access list off for aaa</span>\n<br>"
+    printf "</p>\n<p>\n<span style='color:red;'>access list off for aaa</span>\n<br>"
 else
 	# Get the date 4 days ago in YYYY-MM-DD format Try Linux, then fall back to current date
 	four_days_ago=$(date -d '-4 days' +%Y-%m-%d 2>/dev/null || date +%Y-%m-%d)
@@ -90,7 +90,7 @@ else
     	awk -F'[()]' '{print $2}' |  # Extract timestamps
     	tr '\n' ' ' |                # Join lines
     	sed 's/00:0[0-9]//g; s/00//g; s/ 0/ /g')  # Remove leading zeros
-	printf "</pre>\n<p>\n<span style='color:red;'>%s\n</span>\n<br>" \
+	printf "</p>\n<p>\n<span style='color:red;'>%s\n</span>\n<br>" \
  		"$last_access"
 fi
 
