@@ -21,7 +21,7 @@ printf "   <u>%-10.10s %-3s %-3s %-3s %-3s %-3s %-3s</u>\n"\
     "Hostname" "Os" "Lua" "Php" "Rb" "Gem" "Sh"
 
 	   
-printf "]%s %-10.10s %-3s %-3s %-3s %-3s %-3s %-3s\n"\
+printf "]%s %-10.10s %-3s %-3s %-3s %-3s %-3s %-3s<br>\n"\
     "${C_ID:-N}" \
 	"${HOSTNAME} $(cat /proc/sys/kernel/hostname)" \
     "$(uname | cut -c -3 )" \
@@ -32,7 +32,7 @@ printf "]%s %-10.10s %-3s %-3s %-3s %-3s %-3s %-3s\n"\
     "$(basename "$SHELL")" 
     # D, P ok $HOSTNAME.... C, E, J, O, T, S  OK cat /proc....
 
-printf "!%s %s %s %s %s %s %s %s\n" \
+printf "!%s %s %s %s %s %s %s %s<br>\n" \
 	"${C_ID:-N}" \
 	"$(command -v w3m      >/dev/null 2>&1 && echo "w3m" || echo "<s>w3m</s>"  )" \
 	"$(command -v lynx     >/dev/null 2>&1 && echo "lynx"|| echo "<s>lynx</s>" )" \
@@ -42,32 +42,32 @@ printf "!%s %s %s %s %s %s %s %s\n" \
   	"$(command -v tldr     >/dev/null 2>&1 && echo "tldr"|| echo "<s>tldr</s>" )" \
   	"$(command -v fzf      >/dev/null 2>&1 && echo "fzf" || echo "<s>fzf</s>"  )" 
     
-printf "|%s %s %s %s\n" \
+printf "|%s %s %s %s<br>\n" \
 	"${C_ID:-N}" \
 	"$(command -v git      >/dev/null 2>&1 && echo "git" || echo "<s>git</s>"  )" \
      	"$(command -v rtorrent >/dev/null 2>&1 && echo "rto" || echo "<s>rto</s>"  )" \
    	"$(command -v ${HOME}/.local/bin/tgpt >/dev/null 2>&1 && echo "tgpt" || echo "<s>tgpt</s>")"
 
-printf "[%s %s\n" \
+printf "[%s %s<br>\n" \
 	"${C_ID:-N}" \
 	"$(grep "^$(whoami):" /etc/passwd | \
 	sed 's/identit//g; s/id2/d2/g; s/aaa/aa/g; s/in//; s/sr//; s/current-system/c-s/; s/ome//; s/nfo//; s/kg//; s/ocal//; s/,,,//; s/User \&// ; s/:100:/: 100:/')" 
 
 # Check if .local/bin is in the PATH
 if [[ "$PATH:" == *":/home/$USER/.local/bin:"* ]]; then
-    printf "(%s .local/bin is in the PATH\n" "${C_ID:-N}"
+    printf "(%s .local/bin is in the PATH<br>\n" "${C_ID:-N}"
 else
-    printf "(%s .local/bin is not in the PATH\n" "${C_ID:-N}"
+    printf "(%s .local/bin is not in the PATH<br>\n" "${C_ID:-N}"
 fi
 
 tiny_path=$( echo "$PATH" | sed -e 's/current-system/c-s/g' -e 's/bin/b/g' -e 's/usr/u/g' -e 's/local/l/g' -e 's/games/g/g' -e 's/home/h/g' -e 's/identity/I/g' )
-printf ")%s %s\n" "${C_ID:-N}" "$tiny_path" 
+printf ")%s %s<br>\n" "${C_ID:-N}" "$tiny_path" 
 
  
 #printf "   <u>%-8s %-8s|%-3s %-3s %-3s %-3s</u>\n" "@H.K." "@Site" "dns" "h.k" "ave" "ping"	
 
 
-printf ">%s %-8s %-8s |dn.%-3s hk.%-3s av.%-3s %-3s\n" \
+printf ">%s %-8s %-8s |dn.%-3s hk.%-3s av.%-3s %-3s<br>\n" \
     "${C_ID:-N}" \
     "$(TZ=UTC-8 date +'%H:%M/%d' 2>/dev/null || date +'%H:%M/%d')" \
     "$(date +'%H:%M/%d')" \
@@ -78,9 +78,9 @@ printf ">%s %-8s %-8s |dn.%-3s hk.%-3s av.%-3s %-3s\n" \
 
     	
 if [ -d /home/i/identity ]; then
-	printf "</p>\n<p>\n<span style='color:red;'>no last access info</span>\n<br>"
+	printf "</p>\n<p>\n<span style='color:red;'>no last access info</span><br>\n"
 elif [ -d /home/aaa/store ]; then
-    printf "\n<br>\n<span style='color:red;'>access list off for aaa</span>\n<br>\n"
+    printf "\n<br>\n<span style='color:red;'>access list off for aaa</span><br>\n"
 else
 	# Get the date 4 days ago in YYYY-MM-DD format Try Linux, then fall back to current date
 	four_days_ago=$(date -d '-4 days' +%Y-%m-%d 2>/dev/null || date +%Y-%m-%d)
@@ -90,7 +90,7 @@ else
     	awk -F'[()]' '{print $2}' |  # Extract timestamps
     	tr '\n' ' ' |                # Join lines
     	sed 's/00:0[0-9]//g; s/00//g; s/ 0/ /g')  # Remove leading zeros
-	printf "</p>\n<p>\n<span style='color:red;'>%s\n</span>\n<br>" \
+	printf "\n<span style='color:red;'>%s\n</span><br>\n" \
  		"$last_access"
 fi
 
