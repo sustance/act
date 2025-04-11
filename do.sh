@@ -17,13 +17,13 @@ overall_avg=$(awk '
 # Generate output, C_ID is set with command as a label 
 {
 printf "\n<p>"
-printf "   <u>%-10.10s %-3s %-3s %-3s %-3s %-3s %-3s</u>\n"\
+printf "<u>___%-10.10s %-3s %-3s %-3s %-3s %-3s %-3s</u>\n"\
     "Hostname" "Os" "Lua" "Php" "Rb" "Gem" "Sh"
 
 	   
 printf "]%s %-10.10s %-3s %-3s %-3s %-3s %-3s %-3s<br>\n"\
     "${C_ID:-N}" \
-	"${HOSTNAME} $(cat /proc/sys/kernel/hostname)" \
+    "${HOSTNAME} $(cat /proc/sys/kernel/hostname)" \
     "$(uname | cut -c -3 )" \
     "$(lua -v 2>/dev/null | awk 'NR==1 {print $2}'|cut -d. -f1,2 || echo "<s>lua</s>")" \
     "$(php -v 2>/dev/null | awk 'NR==1 {print $2}'|cut -d. -f1,2 || echo "<s>php</s>")" \
@@ -78,9 +78,9 @@ printf ">%s %-8s %-8s |dn.%-3s hk.%-3s av.%-3s %-3s<br>\n" \
 
     	
 if [ -d /home/i/identity ]; then
-	printf "</p>\n<p>\n<span style='color:red;'>no last access info</span><br>\n"
+	printf "\n<span style='color:red;'>no last access info</span><br>\n"
 elif [ -d /home/aaa/store ]; then
-    printf "\n<br>\n<span style='color:red;'>access list off for aaa</span><br>\n"
+    printf "\n<span style='color:red;'>access list off for aaa</span><br>\n"
 else
 	# Get the date 4 days ago in YYYY-MM-DD format Try Linux, then fall back to current date
 	four_days_ago=$(date -d '-4 days' +%Y-%m-%d 2>/dev/null || date +%Y-%m-%d)
@@ -95,7 +95,7 @@ else
 fi
 
 
-printf "\n%s\n</p>\n</div>\n\n\n\n" "$(crontab -l | grep '* * '|sed 's/>\/dev\/null 2>&1/<br>/')"
+printf "%s\n</p>\n</div>\n\n" "$(crontab -l | grep '* * '|sed 's/>\/dev\/null 2>&1/<br>/')"
 } > ~/public_html/a.txt
 
 cat ~/public_html/a.txt
