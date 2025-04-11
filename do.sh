@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-source .bashrc 
+source $HOME/.bashrc 
 
 # Calculate ping averages Use awk 
 overall_avg=$(awk '
@@ -80,7 +80,7 @@ printf ">%s %-8s %-8s |dn.%-3s hk.%-3s av.%-3s %-3s\n" \
 if [ -d /home/i/identity ]; then
 	printf "</p>\n<p>\n<span style='color:red;'>no last access info</span>\n<br>"
 elif [ -d /home/aaa/store ]; then
-    printf "</p>\n<p>\n<span style='color:red;'>access list off for aaa</span>\n<br>"
+    printf "\n<br>\n<span style='color:red;'>access list off for aaa</span>\n<br>\n"
 else
 	# Get the date 4 days ago in YYYY-MM-DD format Try Linux, then fall back to current date
 	four_days_ago=$(date -d '-4 days' +%Y-%m-%d 2>/dev/null || date +%Y-%m-%d)
