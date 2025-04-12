@@ -17,10 +17,10 @@ overall_avg=$(awk '
 # Generate output, C_ID is set with command as a label 
 {
 printf "\n<p>"
+
 printf "<u>___%-10.10s %-3s %-3s %-3s %-3s %-3s %-3s</u>\n"\
     "Hostname" "Os" "Lua" "Php" "Rb" "Gem" "Sh"
 
-	   
 printf "]%s %-10.10s %-3s %-3s %-3s %-3s %-3s %-3s<br>\n"\
     "${C_ID:-N}" \
     "${HOSTNAME} $(cat /proc/sys/kernel/hostname)" \
@@ -48,10 +48,11 @@ printf "|%s %s %s %s<br>\n" \
      	"$(command -v rtorrent >/dev/null 2>&1 && echo "rto" || echo "<s>rto</s>"  )" \
    	"$(command -v ${HOME}/.local/bin/tgpt >/dev/null 2>&1 && echo "tgpt" || echo "<s>tgpt</s>")"
 
+
 printf "[%s %s<br>\n" \
 	"${C_ID:-N}" \
 	"$(grep "^$(whoami):" /etc/passwd | \
-	sed 's/identit//g; s/id2/d2/g; s/aaa/aa/g; s/in//; s/sr//; s/current-system/c-s/; s/ome//; s/nfo//; s/kg//; s/ocal//; s/,,,//; s/User \&// ; s/:100:/: 100:/')" 
+	sed 's/identit//g; s/\.l/<u>.l<\/u>/g; s/aaa/aa/g; s/in//; s/sr//; s/current-system/c-s/; s/ome//; s/nfo//; s/kg//; s/ocal//; s/,,,//; s/User \&// ; s/:100:/: 100:/')" 
 
 # Check if .local/bin is in the PATH
 if [[ "$PATH:" == *":/home/$USER/.local/bin:"* ]]; then
@@ -64,7 +65,7 @@ tiny_path=$( echo "$PATH" | sed -e 's/current-system/c-s/g' -e 's/bin/b/g' -e 's
 printf ")%s %s<br>\n" "${C_ID:-N}" "$tiny_path" 
 
  
-#printf "   <u>%-8s %-8s|%-3s %-3s %-3s %-3s</u>\n" "@H.K." "@Site" "dns" "h.k" "ave" "ping"	
+# printf "   <u>%-8s %-8s|%-3s %-3s %-3s %-3s</u>\n" "@H.K." "@Site" "dns" "h.k" "ave" "ping"	
 
 
 printf ">%s %-8s %-8s |dn.%-3s hk.%-3s av.%-3s %-3s<br>\n" \
