@@ -54,12 +54,6 @@ printf "[%s %s<br>\n" \
 	"$(grep "^$(whoami):" /etc/passwd | \
 	sed 's/identit//g; s/\.l/<u>.l<\/u>/g; s/aaa/aa/g; s/in//; s/sr//; s/current-system/c-s/; s/ome//; s/nfo//; s/kg//; s/ocal//; s/,,,//; s/User \&// ; s/:100:/: 100:/')" 
 
-# Check if .local/bin is in the PATH
-if [[ "$PATH:" == *":/home/$USER/.local/bin:"* ]]; then
-    printf "(%s .local/bin is in the PATH<br>\n" "${C_ID:-N}"
-else
-    printf "(%s .local/bin is not in the PATH<br>\n" "${C_ID:-N}"
-fi
 
 tiny_path=$( echo "$PATH" | sed -e 's/current-system/c-s/g' -e 's/bin/b/g' -e 's/usr/u/g' -e 's/local/l/g' -e 's/games/g/g' -e 's/home/h/g' -e 's/identity/I/g' )
 printf ")%s %s<br>\n" "${C_ID:-N}" "$tiny_path" 
