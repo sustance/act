@@ -18,7 +18,7 @@ overall_avg=$(awk '
 {
 printf "\n<p>"
 
-printf "<u>___%-10.10s %-3s %-3s %-3s %-3s %-3s %-3s</u>\n"\
+printf "<u>___%-10.10s %-3s %-3s %-3s %-3s %-3s %-3s</u><br>\n"\
     "Hostname" "Os" "Lua" "Php" "Rb" "Gem" "Sh"
 
 printf "]%s %-10.10s %-3s %-3s %-3s %-3s %-3s %-3s<br>\n"\
