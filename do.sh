@@ -46,6 +46,8 @@ printf "|%s %s %s %s<br>\n" \
 	"${C_ID:-N}" \
 	"$(command -v git      >/dev/null 2>&1 && echo "git" || echo "<s>git</s>"  )" \
      	"$(command -v rtorrent >/dev/null 2>&1 && echo "rto" || echo "<s>rto</s>"  )" \
+        "$(command -v mutt >/dev/null 2>&1 && echo "mutt" || echo "<s>rto</s>"  )" \
+        "$(command -v neomutt >/dev/null 2>&1 && echo "neomutt" || echo "<s>rto</s>"  )" \
    	"$(command -v ${HOME}/.local/bin/tgpt >/dev/null 2>&1 && echo "tgpt" || echo "<s>tgpt</s>")"
 
 
