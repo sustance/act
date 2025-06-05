@@ -63,13 +63,13 @@ printf ")%s %s<br>\n" "${C_ID:-N}" "$tiny_path"
  
 # printf "   <u>%-8s %-8s|%-3s %-3s %-3s %-3s</u>\n" "@H.K." "@Site" "dns" "h.k" "ave" "ping"	
 
-
+# remove "-W 1" in ping -c 1 -W 1  8.8.8.8 (-W does not exist on I)
 printf "(%s %-8s %-8s |dn.%-3s hk.%-3s av.%-3s %-3s<br>\n" \
     "${C_ID:-N}" \
     "$(TZ=UTC-8 date +'%H:%M/%d' 2>/dev/null || date +'%H:%M/%d')" \
     "$(date +'%H:%M/%d')" \
-    "$(ping -c 1 -W 1  8.8.8.8 >/dev/null 2>&1 && ping -c 3  8.8.8.8 2>/dev/null| awk -F'/' 'END {printf "%.0f\n", $5}')"
-    "$(ping -c 1 -W 1 hktv.com >/dev/null 2>&1 && ping -c 3 hktv.com 2>/dev/null| awk -F'/' 'END {printf "%.0f\n", $5}')"
+    "$(ping -c 1 8.8.8.8 >/dev/null 2>&1 && ping -c 3  8.8.8.8 2>/dev/null| awk -F'/' 'END {printf "%.0f\n", $5}')"
+    "$(ping -c 1 hktv.com >/dev/null 2>&1 && ping -c 3 hktv.com 2>/dev/null| awk -F'/' 'END {printf "%.0f\n", $5}')"
     "$overall_avg" \
     "$total_count"
 
