@@ -48,7 +48,6 @@ printf "|%s %s %s %s<br>\n" \
      	"$(command -v rtorrent >/dev/null 2>&1 && echo "rto" || echo "<s>rto</s>"  )" \
         "$(command -v mutt     >/dev/null 2>&1 && echo "mutt"|| echo "<s>mutt</s>" )" \
 	"$(command -v nim      >/dev/null 2>&1 && echo "nim" || echo "<s>nim</s>"  )" \
-	"$(command -v chawan   >/dev/null 2>&1 && echo "chaw"|| echo "<s>chaw</s>" )" \
         "$(command -v neomutt  >/dev/null 2>&1 && echo "neom"|| echo "<s>neom</s>" )" \
    	"$(command -v ${HOME}/.local/bin/tgpt >/dev/null 2>&1 && echo "tgpt" || echo "<s>tgpt</s>")"
 
