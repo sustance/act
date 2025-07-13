@@ -87,13 +87,19 @@ else
     	awk -F'[()]' '{print $2}' |  # Extract timestamps
     	tr '\n' ' ' |                # Join lines
     	sed 's/00:0[0-9]//g; s/00//g; s/ 0/ /g')  # Remove leading zeros
-	printf "\n<span style='color:red;'>%s\n</span><br>\n" \
+	printf "\n<span style='color:red;'>%s\n</span>\n" \
  		"$last_access"
 fi
 
 
-printf "%s\n</p>\n</div>\n\n" "$(crontab -l | grep '* * '|sed 's/>\/dev\/null 2>&1/<br>/')"
+printf "\<a href='#${C_ID:-N}'>...Show cron</a>
+
+<div id='${C_ID:-N}'>
+
+
+printf "%s\n</div></p>\n</div>\n\n" "$(crontab -l | grep '* * '|sed 's/>\/dev\/null 2>&1/<br>/')"
 } > ~/public_html/a.txt
+
 
 cat ~/public_html/a.txt
 
