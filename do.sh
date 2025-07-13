@@ -57,8 +57,8 @@ printf "[%s %s<br>\n" \
 	sed 's/identit//g; s/\.l/<u>.l<\/u>/g; s/aaa/aa/g; s/in//; s/sr//; s/current-system/c-s/; s/ome//; s/nfo//; s/kg//; s/ocal//; s/,,,//; s/User \&// ; s/:100:/: 100:/')" 
 
 
-tiny_path=$( echo "$PATH" | sed -e 's/current-system/c-s/g' -e 's/bin/b/g' -e 's/usr/u/g' -e 's/local/l/g' -e 's/games/g/g' -e 's/home/h/g' -e 's/identity/I/g' )
-printf ")%s %s<br>\n" "${C_ID:-N}" "$tiny_path" 
+#tiny_path=$( echo "$PATH" | sed -e 's/current-system/c-s/g' -e 's/bin/b/g' -e 's/usr/u/g' -e 's/local/l/g' -e 's/games/g/g' -e 's/home/h/g' -e 's/identity/I/g' )
+#printf ")%s %s<br>\n" "${C_ID:-N}" "$tiny_path" 
 
  
 # printf "   <u>%-8s %-8s|%-3s %-3s %-3s %-3s</u>\n" "@H.K." "@Site" "dns" "h.k" "ave" "ping"	
