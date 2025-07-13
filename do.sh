@@ -87,12 +87,11 @@ else
     	awk -F'[()]' '{print $2}' |  # Extract timestamps
     	tr '\n' ' ' |                # Join lines
     	sed 's/00:0[0-9]//g; s/00//g; s/ 0/ /g')  # Remove leading zeros
-	printf "\n<span style='color:red;'>%s\n</span>\n" \
- 		"$last_access"
+	printf "\n<span style='color:red;'>%s\n</span>\n" "$last_access"
 fi
 
 
-printf "\<a href='#${C_ID:-N}'> ...show cron</a>
+printf "<a href='#${C_ID:-N}'> ...show cron</a>
 <div id='${C_ID:-N}'>"
 
 
