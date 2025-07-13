@@ -75,9 +75,9 @@ printf "(%s %-8s %-8s |dn.%-3s hk.%-3s av.%-3s %-3s<br>\n" \
 
     	
 if [ -d /home/i/identity ]; then
-	printf "\n<span style='color:red;'>no last access info</span><br>\n"
+	printf "\n<span style='color:red;'>no last access info</span>\n"
 elif [ -d /home/aaa/store ]; then
-    printf "\n<span style='color:red;'>access list off for aaa</span><br>\n"
+    printf "\n<span style='color:red;'>access list off for aaa</span>\n"
 else
 	# Get the date 4 days ago in YYYY-MM-DD format Try Linux, then fall back to current date
 	four_days_ago=$(date -d '-4 days' +%Y-%m-%d 2>/dev/null || date +%Y-%m-%d)
@@ -92,9 +92,8 @@ else
 fi
 
 
-printf "\<a href='#${C_ID:-N}'>...Show cron</a>
-
-<div id='${C_ID:-N}'>
+printf "\<a href='#${C_ID:-N}'> ...show cron</a>
+<div id='${C_ID:-N}'>"
 
 
 printf "%s\n</div></p>\n</div>\n\n" "$(crontab -l | grep '* * '|sed 's/>\/dev\/null 2>&1/<br>/')"
