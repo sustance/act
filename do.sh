@@ -36,19 +36,19 @@ printf "!%s %s %s %s %s %s %s %s<br>\n" \
 	"${C_ID:-N}" \
 	"$(command -v w3m      >/dev/null 2>&1 && echo "w3m" || echo "<s>w3m</s>"  )" \
 	"$(command -v lynx     >/dev/null 2>&1 && echo "lynx"|| echo "<s>lynx</s>" )" \
-    	"$(command -v jekyll   >/dev/null 2>&1 && echo "jek" || echo "<s>jek</s>"  )" \
+    "$(command -v jekyll   >/dev/null 2>&1 && echo "jek" || echo "<s>jek</s>"  )" \
 	"$(command -v newsboat >/dev/null 2>&1 && echo "nwsb"|| echo "<s>nwsb</s>" )" \ 
  	"$(command -v weechat  >/dev/null 2>&1 && echo "wee" || echo "<s>wee</s>"  )" \
   	"$(command -v tldr     >/dev/null 2>&1 && echo "tldr"|| echo "<s>tldr</s>" )" \
-  	"$(command -v fzf      >/dev/null 2>&1 && echo "fzf" || echo "<s>fzf</s>"  )" 
-    
-printf "|%s %s %s %s<br>\n" \
-	"${C_ID:-N}" \
-	"$(command -v git      >/dev/null 2>&1 && echo "git" || echo "<s>git</s>"  )" \
-     	"$(command -v rtorrent >/dev/null 2>&1 && echo "rto" || echo "<s>rto</s>"  )" \
-        "$(command -v mutt     >/dev/null 2>&1 && echo "mutt"|| echo "<s>mutt</s>" )" \
-	"$(command -v nim      >/dev/null 2>&1 && echo "nim" || echo "<s>nim</s>"  )" \
+  	"$(command -v fzf      >/dev/null 2>&1 && echo "fzf" || echo "<s>fzf</s>"  )" \
+    "$(command -v rtorrent >/dev/null 2>&1 && echo "rto" || echo "<s>rto</s>"  )" \
+    "$(command -v nim      >/dev/null 2>&1 && echo "nim" || echo "<s>nim</s>"  )" \
    	"$(command -v ${HOME}/.local/bin/tgpt >/dev/null 2>&1 && echo "tgpt" || echo "<s>tgpt</s>")"
+    
+#printf "|%s %s %s %s<br>\n" \
+#	"${C_ID:-N}" \
+#    "$(command -v mutt     >/dev/null 2>&1 && echo "mutt"|| echo "<s>mutt</s>" )" \
+	
 
 
 printf "[%s %s<br>\n" \
